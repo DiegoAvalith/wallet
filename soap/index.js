@@ -9,11 +9,11 @@ const {
   validatePaymentSchema,
   walletInfoSchema,
 } = require("./src/schemas/customer");
-const { error } = require("console");
 const myService = {
   WalletService: {
     WalletPort: {
       CustomerRegistration: (args) => {
+        console.log("create client");
         const collectionName = "customer";
         const customerValidation = customerSchema.validate(args);
         if (customerValidation.error) {
